@@ -25,7 +25,7 @@ class StatueController extends Controller
      */
     public function create()
     {
-        //
+        return view('statues.create');
     }
 
     /**
@@ -36,7 +36,11 @@ class StatueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $adatok = $request->only(['person', 'height', 'price']);
+        $statue = new Statue();
+        $statue->fill($adatok);
+        $statue->save();
+        return redirect()->route('statues.index');
     }
 
     /**
