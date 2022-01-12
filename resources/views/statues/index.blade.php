@@ -7,6 +7,7 @@
     <title>Statues</title>
 </head>
 <body>
+    <p><a href="{{ route('home') }}">Home</a></p>
     <table>
         <tr>
             <th>Person</th>
@@ -16,7 +17,7 @@
         @foreach ($statues as $statue)
             <tr>
                 <td>
-                    <a href="{{ route('statues.show', ['statue' => $statue->id]) }}">{{ $statue->person }}</a>
+                    <a href="{{ route('statues.show', $statue->id) }}">{{ $statue->person }}</a>
                 </td>
                 <td>{{ $statue->height }}</td>
                 <td>{{ $statue->price }}</td>

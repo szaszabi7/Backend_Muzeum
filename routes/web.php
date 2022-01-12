@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ HomeController::class, 'index' ]);
+Route::get('/', [ HomeController::class, 'index' ])->name('home');
 //Route::get('/statues', [ StatueController::class, 'index' ]);
 
 Route::resource('statues', StatueController::class);
