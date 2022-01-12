@@ -15,7 +15,7 @@ class StatueController extends Controller
     public function index()
     {
         $statues = Statue::orderBy('person')->get();
-        return view('statues.index',  [ 'statues'  => $statues]);
+        return view('statues.index',  [ 'statues' => $statues]);
     }
 
     /**
@@ -47,7 +47,7 @@ class StatueController extends Controller
      */
     public function show(Statue $statue)
     {
-        //
+        return view('statues.show', ['statue' => $statue]);
     }
 
     /**

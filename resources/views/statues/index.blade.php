@@ -15,7 +15,9 @@
         </tr>
         @foreach ($statues as $statue)
             <tr>
-                <td>{{ $statue->person }}</td>
+                <td>
+                    <a href="{{ route('statues.show', ['statue' => $statue->id]) }}">{{ $statue->person }}</a>
+                </td>
                 <td>{{ $statue->height }}</td>
                 <td>{{ $statue->price }}</td>
             </tr>
